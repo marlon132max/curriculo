@@ -1,0 +1,161 @@
+body {
+  margin: 0; 
+  padding: 0; 
+  font-family: Arial, Helvetica, sans-serif; 
+  color: #333; 
+  line-height: 1.6; 
+  background-image: url("/IMG/fundo.png"); /* caminho da imagem */
+  background-size: cover;  /* faz a imagem cobrir toda a tela */
+  background-position: center; /* centraliza */
+  background-attachment: fixed; /* deixa a imagem fixa ao rolar */
+  
+}
+
+.info {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.item {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.item h3 {
+  margin: 0;
+  padding: 12px;
+  background: #444;
+  color: #fff;
+}
+
+.conteudo {
+  max-height: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  padding: 0 12px;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.item:hover .conteudo {
+  max-height: 500px; /* altura suficiente para o conteúdo */
+  padding: 12px;
+}
+
+footer {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.icon {
+  position: relative;
+  display: inline-block;
+}
+
+.icon a {
+  color: #fff;
+  font-size: 32px;
+  transition: color 0.3s;
+}
+
+.icon a:hover {
+  color: #1da1f2;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -40px; /* aparece abaixo do ícone */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #444;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+/* animação cortina */
+.icon:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.root {
+  --base-hue: 260;
+  --font-family: Inter;
+  --leading: 1.5;
+  
+  --bg-color: hsl(var(--base-hue) 25% 25%);
+  --bg-img-url: url(https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg);
+  --text-color: hsl(var(--base-hue) 40% 25%);
+  
+  --card-width: 500px;
+  --card-height: 200px;
+  --card-padding: 2.25rem;
+  --card-corner-radius: 1.5rem;
+  --card-bg-blur-amount: 1rem;
+  --card-shadow:     
+    0 0 0.5rem 2px hsl(var(--base-hue) 25% 25% / 35%),
+    inset 0 0 0.1rem hsl(var(--base-hue) 75% 40% / 20%),
+    inset 0 0 0.2rem 0.1rem hsl(var(--base-hue) 75% 40% / 15%),
+    inset 0 0 0.3rem 0.2rem hsl(var(--base-hue) 75% 40% / 10%);
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+
+p {
+  margin: 0;
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.site-container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: var(--card-width);
+  min-height: var(--card-height);
+  padding: var(--card-padding);
+  border-radius: var(--card-corner-radius);
+  background-color: hsl(var(--base-hue) 25% 95% / 45%);
+}
+
+.card--glass {
+  font-size: 125%;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(var(--card-bg-blur-amount));
+}
+
+.card-footer {
+  margin-top: 10rem;
+  font-size: 0.75rem;
+  opacity: 75%;
+}
